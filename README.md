@@ -43,7 +43,7 @@ That being said it is not enough to "just make it work", show your full potentia
 - Maven 3.x
 
 #### Project
-The prpject was generated through the Spring initializer [1] for Java
+The project was generated through the Spring initializer [1] for Java
  11 with dev tools and Spring Web as dependencies. In order to build and 
  run it, you just need to click the green arrow in the Application class in your Intellij 
  CE IDE or run the following command from your project root und Linux or ios. 
