@@ -55,7 +55,6 @@ $ mvn spring-boot:run
 After running, the project, switch to your browser and hit http://localhost:8080/api/currencies. You should see some 
 demo output. 
 
-If time permits, some unit tests and documentation would also be great. 
 
 [1] https://start.spring.io/
 
