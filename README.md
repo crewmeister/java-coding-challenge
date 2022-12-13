@@ -59,3 +59,20 @@ demo output.
 [1] https://start.spring.io/
 
 [2] [Bundesbank Daily Exchange Rates](https://www.bundesbank.de/dynamic/action/en/statistics/time-series-databases/time-series-databases/759784/759784?statisticType=BBK_ITS&listId=www_sdks_b01012_3&treeAnchor=WECHSELKURSE)
+
+# Test
+
+To run the test execute:
+````shell script
+$ mvn test
+````
+
+
+
+### Sample URLs to hit for testing the code
+Start the application:
+- [/api/currencies](http://localhost:8080/api/currencies) - returns all the currencies for which there are available exchange rates
+- [/api/exchangerates](http://localhost:8080/api/exchangerates) - returns all the available exchange rates
+- [/api/exchangerates/date/{date}](http://localhost:8080/api/exchangerates/date/2020-01-23) - returns all the available exchange rates for the day
+- [/api/exchangerates/date/{date}/currency/{currency-code}](http://localhost:8080/api/exchangerates/date/2020-01-23/currency/AUD) - returns exchange rates for the currency on the day
+- [/api/exchangerates/date/{date}/currency/{currency-code}/amount/{amount-in-currency}](http://localhost:8080/api/exchangerates/date/2020-01-23/currency/AUD/amount/11) - returns the amount in euro for the given amount in the currency on the day

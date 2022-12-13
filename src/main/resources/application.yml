@@ -1,0 +1,50 @@
+spring:
+  datasource:
+    url: 'jdbc:h2:file:/tmp/crewmeister_currencycodes;DB_CLOSE_DELAY=-1;'
+crewmeister:
+  csv:
+    templocation: /tmp
+    source:
+      urls:
+        https://api.statistiken.bundesbank.de/rest/download/BBEX3/D.AUD.EUR.BB.AC.000?format=csv&lang=en,
+        https://api.statistiken.bundesbank.de/rest/download/BBEX3/D.BGN.EUR.BB.AC.000?format=csv&lang=en,
+        https://api.statistiken.bundesbank.de/rest/download/BBEX3/D.BRL.EUR.BB.AC.000?format=csv&lang=en,
+        https://api.statistiken.bundesbank.de/rest/download/BBEX3/D.CAD.EUR.BB.AC.000?format=csv&lang=en,
+        https://api.statistiken.bundesbank.de/rest/download/BBEX3/D.CHF.EUR.BB.AC.000?format=csv&lang=en,
+        https://api.statistiken.bundesbank.de/rest/download/BBEX3/D.CNY.EUR.BB.AC.000?format=csv&lang=en,
+        https://api.statistiken.bundesbank.de/rest/download/BBEX3/D.CYP.EUR.BB.AC.000?format=csv&lang=en,
+        https://api.statistiken.bundesbank.de/rest/download/BBEX3/D.CZK.EUR.BB.AC.000?format=csv&lang=en,
+        https://api.statistiken.bundesbank.de/rest/download/BBEX3/D.DKK.EUR.BB.AC.000?format=csv&lang=en,
+        https://api.statistiken.bundesbank.de/rest/download/BBEX3/D.EEK.EUR.BB.AC.000?format=csv&lang=en,
+        https://api.statistiken.bundesbank.de/rest/download/BBEX3/D.GBP.EUR.BB.AC.000?format=csv&lang=en,
+        https://api.statistiken.bundesbank.de/rest/download/BBEX3/D.GRD.EUR.BB.AC.000?format=csv&lang=en,
+        https://api.statistiken.bundesbank.de/rest/download/BBEX3/D.HKD.EUR.BB.AC.000?format=csv&lang=en,
+        https://api.statistiken.bundesbank.de/rest/download/BBEX3/D.HRK.EUR.BB.AC.000?format=csv&lang=en,
+        https://api.statistiken.bundesbank.de/rest/download/BBEX3/D.HUF.EUR.BB.AC.000?format=csv&lang=en,
+        https://api.statistiken.bundesbank.de/rest/download/BBEX3/D.IDR.EUR.BB.AC.000?format=csv&lang=en,
+        https://api.statistiken.bundesbank.de/rest/download/BBEX3/D.ILS.EUR.BB.AC.000?format=csv&lang=en,
+        https://api.statistiken.bundesbank.de/rest/download/BBEX3/D.INR.EUR.BB.AC.000?format=csv&lang=en,
+        https://api.statistiken.bundesbank.de/rest/download/BBEX3/D.ISK.EUR.BB.AC.000?format=csv&lang=en,
+        https://api.statistiken.bundesbank.de/rest/download/BBEX3/D.JPY.EUR.BB.AC.000?format=csv&lang=en,
+        https://api.statistiken.bundesbank.de/rest/download/BBEX3/D.KRW.EUR.BB.AC.000?format=csv&lang=en,
+        https://api.statistiken.bundesbank.de/rest/download/BBEX3/D.LTL.EUR.BB.AC.000?format=csv&lang=en,
+        https://api.statistiken.bundesbank.de/rest/download/BBEX3/D.LVL.EUR.BB.AC.000?format=csv&lang=en,
+        https://api.statistiken.bundesbank.de/rest/download/BBEX3/D.MTL.EUR.BB.AC.000?format=csv&lang=en,
+        https://api.statistiken.bundesbank.de/rest/download/BBEX3/D.MXN.EUR.BB.AC.000?format=csv&lang=en,
+        https://api.statistiken.bundesbank.de/rest/download/BBEX3/D.MYR.EUR.BB.AC.000?format=csv&lang=en,
+        https://api.statistiken.bundesbank.de/rest/download/BBEX3/D.NOK.EUR.BB.AC.000?format=csv&lang=en,
+        https://api.statistiken.bundesbank.de/rest/download/BBEX3/D.NZD.EUR.BB.AC.000?format=csv&lang=en,
+        https://api.statistiken.bundesbank.de/rest/download/BBEX3/D.PHP.EUR.BB.AC.000?format=csv&lang=en,
+        https://api.statistiken.bundesbank.de/rest/download/BBEX3/D.PLN.EUR.BB.AC.000?format=csv&lang=en,
+        https://api.statistiken.bundesbank.de/rest/download/BBEX3/D.ROL.EUR.BB.AC.000?format=csv&lang=en,
+        https://api.statistiken.bundesbank.de/rest/download/BBEX3/D.RON.EUR.BB.AC.000?format=csv&lang=en,
+        https://api.statistiken.bundesbank.de/rest/download/BBEX3/D.RUB.EUR.BB.AC.000?format=csv&lang=en,
+        https://api.statistiken.bundesbank.de/rest/download/BBEX3/D.SEK.EUR.BB.AC.000?format=csv&lang=en,
+        https://api.statistiken.bundesbank.de/rest/download/BBEX3/D.SGD.EUR.BB.AC.000?format=csv&lang=en,
+        https://api.statistiken.bundesbank.de/rest/download/BBEX3/D.SIT.EUR.BB.AC.000?format=csv&lang=en,
+        https://api.statistiken.bundesbank.de/rest/download/BBEX3/D.SKK.EUR.BB.AC.000?format=csv&lang=en,
+        https://api.statistiken.bundesbank.de/rest/download/BBEX3/D.THB.EUR.BB.AC.000?format=csv&lang=en,
+        https://api.statistiken.bundesbank.de/rest/download/BBEX3/D.TRL.EUR.BB.AC.000?format=csv&lang=en,
+        https://api.statistiken.bundesbank.de/rest/download/BBEX3/D.TRY.EUR.BB.AC.000?format=csv&lang=en,
+        https://api.statistiken.bundesbank.de/rest/download/BBEX3/D.USD.EUR.BB.AC.000?format=csv&lang=en,
+        https://api.statistiken.bundesbank.de/rest/download/BBEX3/D.ZAR.EUR.BB.AC.000?format=csv&lang=en
