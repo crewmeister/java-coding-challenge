@@ -15,8 +15,17 @@ public class CurrencyController {
     @GetMapping("/currencies")
     public ResponseEntity<ArrayList<CurrencyConversionRates>> getCurrencies() {
         ArrayList<CurrencyConversionRates> currencyConversionRates = new ArrayList<CurrencyConversionRates>();
-        currencyConversionRates.add(new CurrencyConversionRates(2.5));
+        currencyConversionRates.add(new CurrencyConversionRates(3.5));
 
         return new ResponseEntity<ArrayList<CurrencyConversionRates>>(currencyConversionRates, HttpStatus.OK);
     }
+    
+    @GetMapping("/exchangerates")
+    public ResponseEntity<ArrayList<CurrencyConversionRates>> getExchangeRates() {
+        ArrayList<CurrencyConversionRates> currencyConversionRates = new ArrayList<CurrencyConversionRates>();
+        currencyConversionRates.add(new CurrencyConversionRates(3.5));
+
+        return new ResponseEntity<ArrayList<CurrencyConversionRates>>(currencyConversionRates, HttpStatus.OK);
+    }
+
 }
