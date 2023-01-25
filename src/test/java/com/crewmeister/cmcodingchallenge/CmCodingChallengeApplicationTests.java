@@ -8,6 +8,7 @@ class CmCodingChallengeApplicationTests {
 
 	@Test
 	void contextLoads() {
+		System.out.println("success");
 	}
 
 }
