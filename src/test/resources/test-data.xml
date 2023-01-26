@@ -1,0 +1,99 @@
+<?xml version="1.0" ?>
+<message:GenericData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:generic="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/generic" xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message" xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common" xsi:schemaLocation="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common https://registry.sdmx.org/schemas/v2_1/SDMXCommon.xsd http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message https://registry.sdmx.org/schemas/v2_1/SDMXMessage.xsd http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/generic https://registry.sdmx.org/schemas/v2_1/SDMXDataGeneric.xsd">
+    <message:Header>
+        <message:ID>BBEX3_D_PLN_EUR_BB_AC_000</message:ID>
+        <message:Test>false</message:Test>
+        <message:Prepared>2023-01-25T16:00:29+01:00</message:Prepared>
+        <message:Sender id="BBK">
+            <common:Name xml:lang="de">Deutsche Bundesbank</common:Name>
+            <message:Contact>
+                <message:Email>presse-information@bundesbank.de</message:Email>
+            </message:Contact>
+        </message:Sender>
+        <message:Structure structureID="BBK_ERX" dimensionAtObservation="TIME_PERIOD">
+            <common:Structure>
+                <URN>urn:sdmx:org.sdmx.infomodel.datastructure.DataStructure=BBK:BBK_ERX(1.0)</URN>
+            </common:Structure>
+        </message:Structure>
+    </message:Header>
+    <message:DataSet structureRef="BBK_ERX" setID="BBEX3" action="Replace" validFromDate="2023-01-25T16:00:29.794+01:00">
+        <generic:Series>
+            <generic:SeriesKey>
+                <generic:Value id="BBK_STD_FREQ" value="D"></generic:Value>
+                <generic:Value id="BBK_STD_CURRENCY" value="PLN"></generic:Value>
+                <generic:Value id="BBK_ERX_PARTNER_CURRENCY" value="EUR"></generic:Value>
+                <generic:Value id="BBK_ERX_SERIES_TYPE" value="BB"></generic:Value>
+                <generic:Value id="BBK_ERX_RATE_TYPE" value="AC"></generic:Value>
+                <generic:Value id="BBK_ERX_SUFFIX" value="000"></generic:Value>
+            </generic:SeriesKey>
+            <generic:Obs>
+                <generic:ObsDimension value="2023-01-16"></generic:ObsDimension>
+                <generic:ObsValue value="4.6935"></generic:ObsValue>
+                <generic:Attributes>
+                    <generic:Value id="BBK_DIFF" value="0.1"></generic:Value>
+                </generic:Attributes>
+            </generic:Obs>
+            <generic:Obs>
+                <generic:ObsDimension value="2023-01-17"></generic:ObsDimension>
+                <generic:ObsValue value="4.6958"></generic:ObsValue>
+                <generic:Attributes>
+                    <generic:Value id="BBK_DIFF" value="0.0"></generic:Value>
+                </generic:Attributes>
+            </generic:Obs>
+            <generic:Obs>
+                <generic:ObsDimension value="2023-01-18"></generic:ObsDimension>
+                <generic:ObsValue value="4.6983"></generic:ObsValue>
+                <generic:Attributes>
+                    <generic:Value id="BBK_DIFF" value="0.1"></generic:Value>
+                </generic:Attributes>
+            </generic:Obs>
+            <generic:Obs>
+                <generic:ObsDimension value="2023-01-19"></generic:ObsDimension>
+                <generic:ObsValue value="4.7063"></generic:ObsValue>
+                <generic:Attributes>
+                    <generic:Value id="BBK_DIFF" value="0.2"></generic:Value>
+                </generic:Attributes>
+            </generic:Obs>
+            <generic:Obs>
+                <generic:ObsDimension value="2023-01-20"></generic:ObsDimension>
+                <generic:ObsValue value="4.7100"></generic:ObsValue>
+                <generic:Attributes>
+                    <generic:Value id="BBK_DIFF" value="0.1"></generic:Value>
+                </generic:Attributes>
+            </generic:Obs>
+            <generic:Obs>
+                <generic:ObsDimension value="2023-01-21"></generic:ObsDimension>
+                <generic:Attributes>
+                    <generic:Value id="OBS_STATUS" value="K"></generic:Value>
+                </generic:Attributes>
+            </generic:Obs>
+            <generic:Obs>
+                <generic:ObsDimension value="2023-01-22"></generic:ObsDimension>
+                <generic:Attributes>
+                    <generic:Value id="OBS_STATUS" value="K"></generic:Value>
+                </generic:Attributes>
+            </generic:Obs>
+            <generic:Obs>
+                <generic:ObsDimension value="2023-01-23"></generic:ObsDimension>
+                <generic:ObsValue value="4.7113"></generic:ObsValue>
+                <generic:Attributes>
+                    <generic:Value id="BBK_DIFF" value="0.0"></generic:Value>
+                </generic:Attributes>
+            </generic:Obs>
+            <generic:Obs>
+                <generic:ObsDimension value="2023-01-24"></generic:ObsDimension>
+                <generic:ObsValue value="4.7130"></generic:ObsValue>
+                <generic:Attributes>
+                    <generic:Value id="BBK_DIFF" value="0.0"></generic:Value>
+                </generic:Attributes>
+            </generic:Obs>
+            <generic:Obs>
+                <generic:ObsDimension value="2023-01-25"></generic:ObsDimension>
+                <generic:ObsValue value="4.7158"></generic:ObsValue>
+                <generic:Attributes>
+                    <generic:Value id="BBK_DIFF" value="0.1"></generic:Value>
+                </generic:Attributes>
+            </generic:Obs>
+        </generic:Series>
+    </message:DataSet>
+</message:GenericData>

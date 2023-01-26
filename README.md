@@ -19,11 +19,19 @@ Your task is to create a foreign exchange rate service as SpringBoot-based micro
 The exchange rates can be received from [2]. This is a public service provided by the German central bank.
 
 As we are using user story format to specify our requirements, here are the user stories to implement:
-
-- As a client, I want to get a list of all available currencies
+/api
+- As a client, I want to get a list of all available currencies 
+  - /currencies 
+  - getAllCurrencies()
 - As a client, I want to get all EUR-FX exchange rates at all available dates as a collection
-- As a client, I want to get the EUR-FX exchange rate at particular day
+  - /exchangerates?date=all
+  - getExchangeRates()
+- As a client, I want to get the EUR-FX exchange rate at particular day 
+  - /exchangerates?date='12-JAN-23'
+  - getExchangeRates(DATE perticularDat)
 - As a client, I want to get a foreign exchange amount for a given currency converted to EUR on a particular day
+  - /exchangerates?date='12-JAN-23'&currency='USD'
+  - getExchangeRates(Date perticularDate, Currency currencyCode)
 
 If you think that your service would require storage, please use H2 for simplicity, even if this would not be your choice if 
 you would implement an endpoint for real clients. 
