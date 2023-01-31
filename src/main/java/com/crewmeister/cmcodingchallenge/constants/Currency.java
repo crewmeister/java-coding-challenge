@@ -1,5 +1,8 @@
 package com.crewmeister.cmcodingchallenge.constants;
 
+import java.util.Arrays;
+import java.util.Optional;
+
 public enum Currency {
     AUD("AUD"),
     BGN("BGN"),
@@ -47,5 +50,10 @@ public enum Currency {
 
     Currency(String isoCode) {
         this.isoCode = isoCode;
+    }
+
+    public static Optional<Currency> getCurrency(String currencyCode) {
+        return Arrays.stream(values())
+                .filter(code -> code.isoCode.equalsIgnoreCase(currencyCode)).findFirst();
     }
 }

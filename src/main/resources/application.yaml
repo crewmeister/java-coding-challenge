@@ -1,0 +1,10 @@
+server:
+  application:
+    name: FX Rate API
+  error:
+    include-stacktrace: never
+
+external:
+  fx:
+    scheme: https
+    host: api.statistiken.bundesbank.de/rest/data
