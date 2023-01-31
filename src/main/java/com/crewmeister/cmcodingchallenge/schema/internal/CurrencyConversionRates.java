@@ -9,6 +9,7 @@ import java.util.List;
 
 @Getter
 @Setter
+@AllArgsConstructor
 public class CurrencyConversionRates {
    private List<ConversionRate> conversionRateList;
 }

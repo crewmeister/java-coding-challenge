@@ -2,7 +2,7 @@ server:
   application:
     name: FX Rate API
   error:
-    include-stacktrace: never
+    include-stacktrace: ALWAYS
 
 external:
   fx:

@@ -2,7 +2,7 @@ package com.crewmeister.cmcodingchallenge.currency;
 
 import com.crewmeister.cmcodingchallenge.constants.Currency;
 import com.crewmeister.cmcodingchallenge.exception.CurrencyNotSupportedException;
-import com.crewmeister.cmcodingchallenge.schema.internal.ConversionRate;
+import com.crewmeister.cmcodingchallenge.exception.RateNotAvailableException;
 import com.crewmeister.cmcodingchallenge.schema.internal.CurrencyConversionRates;
 import com.crewmeister.cmcodingchallenge.schema.internal.CurrencyResponse;
 import com.crewmeister.cmcodingchallenge.schema.internal.ExchangedAmount;
@@ -15,8 +15,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
-
-import java.util.Optional;
 
 @RestController()
 @RequestMapping("/api")
@@ -45,27 +43,28 @@ public class CurrencyController {
     }
 
     @GetMapping("/exchange-currency")
-    public ResponseEntity<ExchangedAmount> getExchangeValue(
+    public ResponseEntity<ExchangedAmount> getExchangedAmount(
             @RequestParam() String currencyCode,
-            @RequestParam() String date,
-            @RequestParam() String amount
+            @RequestParam() String amount,
+            @RequestParam(required = false) String date
+
     ) {
-        Optional<ConversionRate> currencyConversionRate = null;
+        ExchangedAmount exchangedAmount = null;
         try {
-            currencyConversionRate = fxRateService.getFXRates(currencyCode, date).getConversionRateList().stream().findFirst();
+            exchangedAmount = fxRateService.getFXValue(currencyCode, amount, date);
         } catch (CurrencyNotSupportedException e) {
             handleCurrencyNotSupportedException();
-        }
-        var exchangedAmount = new ExchangedAmount();
-
-        if (currencyConversionRate.isPresent()) {
-            exchangedAmount.setAmount(currencyConversionRate.get().getConversionRate() * Double.parseDouble(amount));
-            exchangedAmount.setConversionRate(currencyConversionRate.get());
+        } catch (RateNotAvailableException e) {
+            handleRateNotAvailableException();
         }
         return new ResponseEntity<>(exchangedAmount, HttpStatus.OK);
     }
 
     private void handleCurrencyNotSupportedException() {
         throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Currency Not Supported");
+    }
+
+    private void handleRateNotAvailableException() {
+        throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Rate Not Available");
     }
 }

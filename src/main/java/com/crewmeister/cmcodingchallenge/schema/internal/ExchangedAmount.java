@@ -7,6 +7,6 @@ import lombok.Setter;
 @Getter
 @Setter
 public class ExchangedAmount {
-    private double amount;
+    private String amount;
     private ConversionRate conversionRate;
 }

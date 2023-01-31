@@ -4,7 +4,6 @@ import com.crewmeister.cmcodingchallenge.constants.Currency;
 import com.crewmeister.cmcodingchallenge.schema.external.*;
 import com.crewmeister.cmcodingchallenge.schema.internal.ConversionRate;
 import com.crewmeister.cmcodingchallenge.schema.internal.CurrencyConversionRates;
-import lombok.val;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,11 +14,11 @@ public class SchemaTransformer {
     private static final String BBK_STD_CURRENCY = "BBK_STD_CURRENCY";
 
     public static CurrencyConversionRates transform(GenericData genericData) {
-        var currencyConversionRates = new CurrencyConversionRates();
+        var currencyConversionRates = new CurrencyConversionRates(new ArrayList<>());
         var series = extractSeries(genericData);
         var obsList = extractObsList(series);
         if (!obsList.isEmpty()) {
-            currencyConversionRates.setConversionRateList(
+            currencyConversionRates.getConversionRateList().addAll(
                     obsList.stream().map(e -> constructObject(series, e)).collect(Collectors.toList()));
         }
         return currencyConversionRates;
@@ -42,8 +41,8 @@ public class SchemaTransformer {
     }
 
     private static ConversionRate constructObject(Series series, Obs e) {
-        return new ConversionRate(Double.parseDouble(
-                Optional.ofNullable(e.getObsValue()).orElse(new ObsValue("0.0")).getValue()),
+        return new ConversionRate(
+                Optional.ofNullable(e.getObsValue()).orElse(new ObsValue("No value available")).getValue(),
                 Optional.ofNullable(e.getObsDimension()).orElse(new ObsDimension()).getValue(),
                 Currency.valueOf(extractSeriesValue(series.getSeriesKey().getValueList(), BBK_STD_CURRENCY)));
     }
