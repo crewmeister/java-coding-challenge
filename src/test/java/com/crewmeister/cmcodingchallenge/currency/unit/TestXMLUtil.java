@@ -20,7 +20,6 @@ public class TestXMLUtil {
         File file = new File(classLoader.getResource(resourceName).getFile());
         String content = Files.readString(file.toPath());
         GenericData value = XMLUtil.parseData(content, GenericData.class);
-        System.out.println(value.getDataSet());
         assertNotNull(value);
         assertNotNull(value.getDataSet());
         assertNotNull(value.getDataSet().getSeries());
