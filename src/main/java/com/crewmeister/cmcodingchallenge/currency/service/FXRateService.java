@@ -58,7 +58,7 @@ public class FXRateService {
         var exchangedAmount = new ExchangedAmount();
         if (currencyConversionRate.isPresent()) {
             try {
-                double conversionRate = Double.parseDouble(currencyConversionRate.get().getConversionRate());
+                double conversionRate = Double.parseDouble(currencyConversionRate.get().getRate());
                 exchangedAmount.setConversionRate(currencyConversionRate.get());
                 exchangedAmount.setAmount(String.valueOf(conversionRate * Double.parseDouble(amount)));
             } catch (NumberFormatException nfe) {

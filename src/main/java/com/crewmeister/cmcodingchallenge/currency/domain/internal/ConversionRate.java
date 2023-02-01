@@ -9,7 +9,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 public class ConversionRate {
-    private String conversionRate;
+    private String rate;
     private String date;
     private Currency currency;
 }

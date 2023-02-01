@@ -43,7 +43,7 @@ public class CurrencyController {
     }
 
     @GetMapping("/exchange-currency")
-    public ResponseEntity<ExchangedAmount> getExchangedAmount(
+    public ResponseEntity<ExchangedAmount> getCurrencyExchange(
             @RequestParam() String currencyCode,
             @RequestParam() String amount,
             @RequestParam(required = false) String date
