@@ -1,21 +1,24 @@
 package com.crewmeister.cmcodingchallenge.currency.service;
 
 import com.crewmeister.cmcodingchallenge.currency.constants.Currency;
-import com.crewmeister.cmcodingchallenge.currency.exception.CurrencyNotSupportedException;
-import com.crewmeister.cmcodingchallenge.currency.exception.RateNotAvailableException;
+import com.crewmeister.cmcodingchallenge.currency.domain.SchemaTransformer;
 import com.crewmeister.cmcodingchallenge.currency.domain.external.GenericData;
 import com.crewmeister.cmcodingchallenge.currency.domain.internal.ConversionRate;
 import com.crewmeister.cmcodingchallenge.currency.domain.internal.CurrencyConversionRates;
 import com.crewmeister.cmcodingchallenge.currency.domain.internal.ExchangedAmount;
+import com.crewmeister.cmcodingchallenge.currency.exception.CurrencyNotSupportedException;
+import com.crewmeister.cmcodingchallenge.currency.exception.RateNotAvailableException;
 import com.crewmeister.cmcodingchallenge.currency.util.RestUtil;
-import com.crewmeister.cmcodingchallenge.currency.domain.SchemaTransformer;
 import lombok.extern.slf4j.Slf4j;
 import lombok.val;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.retry.annotation.Backoff;
+import org.springframework.retry.annotation.Retryable;
 import org.springframework.stereotype.Service;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import java.net.SocketTimeoutException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
@@ -38,6 +41,8 @@ public class FXRateService {
 
     private static final DateTimeFormatter DATE_TIME_FORMATTER = DateTimeFormatter.ofPattern("uuuu-MM-dd");
 
+    @Retryable(value = SocketTimeoutException.class, maxAttemptsExpression = "${external.retry.maxAttempts}",
+            backoff = @Backoff(delayExpression = "${external.retry.maxDelay}"))
     public CurrencyConversionRates getFXRates(String currencyCode, String date) throws CurrencyNotSupportedException {
         validateSupportedCurrency(currencyCode);
         UriComponentsBuilder uriComponents = UriComponentsBuilder.newInstance()
@@ -53,8 +58,12 @@ public class FXRateService {
         return SchemaTransformer.transform(resp);
     }
 
-    public ExchangedAmount getFXValue(String currencyCode, String amount, String date) throws CurrencyNotSupportedException, RateNotAvailableException {
-        Optional<ConversionRate> currencyConversionRate = getFXRates(currencyCode, date == null ? getCurrentDate() : date).getConversionRateList().stream().findFirst();
+    @Retryable(value = SocketTimeoutException.class, maxAttemptsExpression = "${external.retry.maxAttempts}",
+            backoff = @Backoff(delayExpression = "${external.retry.maxDelay}"))
+    public ExchangedAmount getFXValue(String currencyCode, String amount, String date)
+            throws CurrencyNotSupportedException, RateNotAvailableException {
+        Optional<ConversionRate> currencyConversionRate =
+                getFXRates(currencyCode, date == null ? getCurrentDate() : date).getConversionRateList().stream().findFirst();
         var exchangedAmount = new ExchangedAmount();
         if (currencyConversionRate.isPresent()) {
             try {

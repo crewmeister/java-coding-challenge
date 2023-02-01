@@ -17,6 +17,6 @@ public class DataSet {
     String action;
     String validFromDate;
 
-    @JacksonXmlProperty(localName ="Series")
+    @JacksonXmlProperty(localName = "Series")
     Series series;
 }

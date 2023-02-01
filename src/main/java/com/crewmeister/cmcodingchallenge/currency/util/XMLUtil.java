@@ -6,7 +6,8 @@ import java.io.IOException;
 
 public class XMLUtil {
     private static final XmlMapper xmlMapper = new XmlMapper();
-    public static <T> T parseData(String xmlData, Class<T> typeC) throws IOException  {
+
+    public static <T> T parseData(String xmlData, Class<T> typeC) throws IOException {
         return xmlMapper.readValue(xmlData, typeC);
     }
 }

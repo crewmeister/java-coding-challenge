@@ -15,7 +15,6 @@ public class TestRestUtil {
     private RestUtil restUtil;
 
 
-
     String url1 = "https://api.statistiken.bundesbank.de/rest/data/BBEX3/D.PLN.EUR.BB.AC.000?detail=dataonly&lastNObservations=10";
 
     //@Test

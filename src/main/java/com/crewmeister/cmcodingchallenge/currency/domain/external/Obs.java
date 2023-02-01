@@ -2,7 +2,10 @@ package com.crewmeister.cmcodingchallenge.currency.domain.external;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Getter
@@ -10,9 +13,9 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Obs {
-    @JacksonXmlProperty(localName ="ObsDimension")
+    @JacksonXmlProperty(localName = "ObsDimension")
     ObsDimension obsDimension;
 
-    @JacksonXmlProperty(localName ="ObsValue")
+    @JacksonXmlProperty(localName = "ObsValue")
     ObsValue obsValue;
 }

@@ -11,5 +11,6 @@ import lombok.Setter;
 public class CurrencyResponse {
     public CurrencyResponse() {
     }
+
     private Currency[] currencies;
 }

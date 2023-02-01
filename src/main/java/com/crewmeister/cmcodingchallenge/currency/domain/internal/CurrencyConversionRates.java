@@ -12,5 +12,5 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class CurrencyConversionRates {
-   private List<ConversionRate> conversionRateList;
+    private List<ConversionRate> conversionRateList;
 }

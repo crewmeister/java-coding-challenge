@@ -1,11 +1,11 @@
 package com.crewmeister.cmcodingchallenge.currency.controller;
 
 import com.crewmeister.cmcodingchallenge.currency.constants.Currency;
-import com.crewmeister.cmcodingchallenge.currency.exception.CurrencyNotSupportedException;
-import com.crewmeister.cmcodingchallenge.currency.exception.RateNotAvailableException;
 import com.crewmeister.cmcodingchallenge.currency.domain.internal.CurrencyConversionRates;
 import com.crewmeister.cmcodingchallenge.currency.domain.internal.CurrencyResponse;
 import com.crewmeister.cmcodingchallenge.currency.domain.internal.ExchangedAmount;
+import com.crewmeister.cmcodingchallenge.currency.exception.CurrencyNotSupportedException;
+import com.crewmeister.cmcodingchallenge.currency.exception.RateNotAvailableException;
 import com.crewmeister.cmcodingchallenge.currency.service.FXRateService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -65,6 +65,6 @@ public class CurrencyController {
     }
 
     private void handleRateNotAvailableException() {
-        throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Rate Not Available");
+        throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Rate Not Available for the specified date");
     }
 }

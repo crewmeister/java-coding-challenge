@@ -2,9 +2,13 @@ server:
   application:
     name: FX Rate API
   error:
-    include-stacktrace: ALWAYS
+    include-stacktrace: NEVER
 
 external:
   fx:
     scheme: https
     host: api.statistiken.bundesbank.de/rest/data
+    timeout: 500
+  retry:
+    maxAttempts: 2
+    maxDelay: 2000

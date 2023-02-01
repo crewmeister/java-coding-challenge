@@ -1,7 +1,7 @@
 package com.crewmeister.cmcodingchallenge.currency.unit;
 
-import com.crewmeister.cmcodingchallenge.currency.util.XMLUtil;
 import com.crewmeister.cmcodingchallenge.currency.domain.external.GenericData;
+import com.crewmeister.cmcodingchallenge.currency.util.XMLUtil;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;

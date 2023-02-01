@@ -1,5 +1,9 @@
 <?xml version="1.0" ?>
-<message:GenericData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:generic="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/generic" xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message" xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common" xsi:schemaLocation="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common https://registry.sdmx.org/schemas/v2_1/SDMXCommon.xsd http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message https://registry.sdmx.org/schemas/v2_1/SDMXMessage.xsd http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/generic https://registry.sdmx.org/schemas/v2_1/SDMXDataGeneric.xsd">
+<message:GenericData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                     xmlns:generic="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/generic"
+                     xmlns:message="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message"
+                     xmlns:common="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common"
+                     xsi:schemaLocation="http://www.sdmx.org/resources/sdmxml/schemas/v2_1/common https://registry.sdmx.org/schemas/v2_1/SDMXCommon.xsd http://www.sdmx.org/resources/sdmxml/schemas/v2_1/message https://registry.sdmx.org/schemas/v2_1/SDMXMessage.xsd http://www.sdmx.org/resources/sdmxml/schemas/v2_1/data/generic https://registry.sdmx.org/schemas/v2_1/SDMXDataGeneric.xsd">
     <message:Header>
         <message:ID>BBEX3_D_PLN_EUR_BB_AC_000</message:ID>
         <message:Test>false</message:Test>
@@ -16,7 +20,8 @@
             </common:Structure>
         </message:Structure>
     </message:Header>
-    <message:DataSet structureRef="BBK_ERX" setID="BBEX3" action="Replace" validFromDate="2023-01-25T16:00:29.794+01:00">
+    <message:DataSet structureRef="BBK_ERX" setID="BBEX3" action="Replace"
+                     validFromDate="2023-01-25T16:00:29.794+01:00">
         <generic:Series>
             <generic:SeriesKey>
                 <generic:Value id="BBK_STD_FREQ" value="D"></generic:Value>

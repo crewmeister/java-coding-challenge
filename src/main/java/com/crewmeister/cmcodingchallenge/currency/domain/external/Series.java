@@ -16,10 +16,10 @@ import java.util.List;
 @Builder
 @Jacksonized
 public class Series {
-    @JacksonXmlProperty(localName ="SeriesKey")
+    @JacksonXmlProperty(localName = "SeriesKey")
     SeriesKey seriesKey;
 
     @JacksonXmlElementWrapper(useWrapping = false)
-    @JacksonXmlProperty(localName ="Obs")
+    @JacksonXmlProperty(localName = "Obs")
     List<Obs> obsList;
 }

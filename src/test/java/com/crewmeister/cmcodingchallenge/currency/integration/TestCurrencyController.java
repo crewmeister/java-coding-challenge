@@ -46,7 +46,7 @@ public class TestCurrencyController {
     public void testGetExchangeRateForDateSuccess() {
         String targetUrl = "https://api.statistiken.bundesbank.de/rest/data/BBEX3/D.CHF.EUR.BB.AC.000?detail=dataonly&startPeriod=2023-01-29&endPeriod=2023-01-29";
 
-        Mockito.when(restUtil.getForObject(targetUrl, GenericData.class)).thenReturn(createDummyResponse("2023-01-24","1.4517"));
+        Mockito.when(restUtil.getForObject(targetUrl, GenericData.class)).thenReturn(createDummyResponse("2023-01-24", "1.4517"));
         var response = this.testRestTemplate.getForEntity(
                 "http://localhost:" + port + "/api/exchange-rates?date=2023-01-29&currencyCode=CHF", CurrencyConversionRates.class);
 
@@ -59,7 +59,7 @@ public class TestCurrencyController {
     public void testGetCurrencyExchangeSuccess() {//"2023-01-24" //"1.4517"
         String targetUrl = "https://api.statistiken.bundesbank.de/rest/data/BBEX3/D.CHF.EUR.BB.AC.000?detail=dataonly&startPeriod=2023-01-29&endPeriod=2023-01-29";
 
-        Mockito.when(restUtil.getForObject(targetUrl, GenericData.class)).thenReturn(createDummyResponse("2023-01-24","1.4517"));
+        Mockito.when(restUtil.getForObject(targetUrl, GenericData.class)).thenReturn(createDummyResponse("2023-01-24", "1.4517"));
         var response = this.testRestTemplate.getForEntity(
                 "http://localhost:" + port + "/api/exchange-currency?date=2023-01-29&currencyCode=CHF&amount=2000", ExchangedAmount.class);
 
@@ -73,12 +73,13 @@ public class TestCurrencyController {
     public void testThrowRateNotAvailableException() {
         String targetUrl = "https://api.statistiken.bundesbank.de/rest/data/BBEX3/D.CHF.EUR.BB.AC.000?detail=dataonly&startPeriod=2023-01-28&endPeriod=2023-01-28";
 
-        Mockito.when(restUtil.getForObject(targetUrl, GenericData.class)).thenReturn(createDummyResponse("2023-01-28",null));
+        Mockito.when(restUtil.getForObject(targetUrl, GenericData.class)).thenReturn(createDummyResponse("2023-01-28", null));
         var response = this.testRestTemplate.getForEntity(
                 "http://localhost:" + port + "/api/exchange-currency?date=2023-01-28&currencyCode=CHF&amount=2000", ExchangedAmount.class);
 
         assertEquals(response.getStatusCode(), HttpStatus.BAD_REQUEST);
     }
+
     @Test
     public void testGetExchangeRateForNotSupportedCurrency() {
         var response = this.testRestTemplate.getForEntity(
