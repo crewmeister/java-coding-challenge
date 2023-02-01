@@ -17,9 +17,9 @@ import java.util.List;
 @Jacksonized
 public class Series {
     @JacksonXmlProperty(localName = "SeriesKey")
-    SeriesKey seriesKey;
+    private SeriesKey seriesKey;
 
     @JacksonXmlElementWrapper(useWrapping = false)
     @JacksonXmlProperty(localName = "Obs")
-    List<Obs> obsList;
+    private List<Obs> obsList;
 }

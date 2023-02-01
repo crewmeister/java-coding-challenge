@@ -12,10 +12,10 @@ import lombok.extern.jackson.Jacksonized;
 @Builder
 @Jacksonized
 public class DataSet {
-    String structureRef;
-    String setID;
-    String action;
-    String validFromDate;
+    private String structureRef;
+    private String setID;
+    private String action;
+    private String validFromDate;
 
     @JacksonXmlProperty(localName = "Series")
     Series series;

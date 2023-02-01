@@ -6,5 +6,5 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Header {
     @JsonProperty("ID")
-    String id;
+    private String id;
 }

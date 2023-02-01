@@ -94,10 +94,8 @@ public class TestCurrencyController {
         var series = Series.builder()
                 .seriesKey(SeriesKey.builder().valueList(List.of(new com.crewmeister.cmcodingchallenge.currency.domain.external.Value("BBK_STD_CURRENCY", "CHF"))).build())
                 .obsList(obsList).build();
-        var genericData =
-                GenericData.builder()
-                        .dataSet(DataSet.builder().series(series).build())
-                        .build();
-        return genericData;
+        return GenericData.builder()
+                .dataSet(DataSet.builder().series(series).build())
+                .build();
     }
 }

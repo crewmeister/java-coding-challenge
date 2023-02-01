@@ -11,11 +11,11 @@ import lombok.extern.jackson.Jacksonized;
 @JacksonXmlRootElement(localName = "GenericData")
 @Jacksonized
 public class GenericData {
-    String schemaLocation;
+    private String schemaLocation;
 
     @JacksonXmlProperty(localName = "Header")
-    Header header;
+    private Header header;
 
     @JacksonXmlProperty(localName = "DataSet")
-    DataSet dataSet;
+    private DataSet dataSet;
 }

@@ -14,8 +14,8 @@ import lombok.Setter;
 @NoArgsConstructor
 public class Obs {
     @JacksonXmlProperty(localName = "ObsDimension")
-    ObsDimension obsDimension;
+    private ObsDimension obsDimension;
 
     @JacksonXmlProperty(localName = "ObsValue")
-    ObsValue obsValue;
+    private ObsValue obsValue;
 }

@@ -16,5 +16,5 @@ import java.util.List;
 public class SeriesKey {
     @JacksonXmlElementWrapper(useWrapping = false)
     @JacksonXmlProperty(localName = "Value")
-    List<Value> valueList;
+    private List<Value> valueList;
 }

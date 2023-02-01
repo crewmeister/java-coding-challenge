@@ -12,7 +12,7 @@ import lombok.Setter;
 @NoArgsConstructor
 public class Value {
     @JacksonXmlProperty(localName = "id")
-    String id;
+    private String id;
     @JacksonXmlProperty(localName = "value")
-    String value;
+    private String value;
 }
