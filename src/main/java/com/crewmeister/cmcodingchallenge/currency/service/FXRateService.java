@@ -58,8 +58,6 @@ public class FXRateService {
         return SchemaTransformer.transform(resp);
     }
 
-    @Retryable(value = SocketTimeoutException.class, maxAttemptsExpression = "${external.retry.maxAttempts}",
-            backoff = @Backoff(delayExpression = "${external.retry.maxDelay}"))
     public ExchangedAmount getFXValue(String currencyCode, String amount, String date)
             throws CurrencyNotSupportedException, RateNotAvailableException {
         Optional<ConversionRate> currencyConversionRate =
@@ -76,7 +74,7 @@ public class FXRateService {
         }
         return exchangedAmount;
     }
-
+    // usd against euro -> 0.8 -> 0.8 * 100 -> 80 euro
     private void validateSupportedCurrency(String currencyCode) throws CurrencyNotSupportedException {
         val currencyStream = Arrays.stream(Currency.values());
         if (Currency.getCurrency(currencyCode).isEmpty()) {
@@ -88,3 +86,8 @@ public class FXRateService {
         return DATE_TIME_FORMATTER.format(LocalDate.now());
     }
 }
+
+
+// user -> service   -> 3rd service - 1st aattmep X
+ //                    -> 3rd service - 2nd attempt X
+   // <- rate not available responmse
