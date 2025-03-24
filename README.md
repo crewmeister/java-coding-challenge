@@ -61,4 +61,10 @@ demo output.
 [2] [Bundesbank Daily Exchange Rates](https://www.bundesbank.de/dynamic/action/en/statistics/time-series-databases/time-series-databases/759784/759784?statisticType=BBK_ITS&listId=www_sdks_b01012_3&treeAnchor=WECHSELKURSE)
 
 #### Submission
+- Submit completed project via the Greenhouse link in the email received from the Recruitment Manager
 - Please send us a link to a github repo that with the solution
+- Please do not submit zipped files
+- Please do not submit via email to the challenge@crewmeister.com 
+
+
+
